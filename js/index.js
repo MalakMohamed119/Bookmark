@@ -9,7 +9,6 @@ if (localStorage.getItem("websites") == null) {
     display();
 }
 
-
 function isValidURL(url) {
     var pattern = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+\.[a-z]{2,}(\S*)?$/;
     return pattern.test(url);
@@ -25,11 +24,10 @@ function add() {
     }
 
     if (!isValidURL(url)) {
-        alert(" Please enter a valid URL (e.g. https://example.com)");
+        alert("Please enter a valid URL (e.g. https://example.com)");
         return;
     }
 
-   
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
         url = "https://" + url;
     }
@@ -51,17 +49,7 @@ function clearInputs() {
 }
 
 function display() {
-    var cartona = `
-        <thead>
-            <tr>
-                <th>Index</th>
-                <th>Website Name</th>
-                <th>Visit</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody id="tableContent">
-    `;
+    var cartona = "";
 
     for (var i = 0; i < websites.length; i++) {
         cartona += `
@@ -84,8 +72,7 @@ function display() {
         `;
     }
 
-    cartona += `</tbody>`;
-    document.getElementById("tablle").innerHTML = cartona;
+    document.getElementById("tableContent").innerHTML = cartona;
 }
 
 function deleteWebsite(index) {
