@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(247, 236, 222);
+}
+h1{
+    font-family:"Pacifico", cursive;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 60px;
+    color:rgb(53, 46, 40) ;
+}
+h1::before{
+    content: "";
+    width: 100%;
+   background-color:#fec260 ;
+    position: absolute;
+    height: 25%;
+    bottom: 15%;
+    z-index: -1;
+    transition: height 350ms ;
+}
+h1:hover::before
+{
+height: 45%;
+}
+.fav{
+    font-family: "Righteous";
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
+    font-size:40 px;
+    background: linear-gradient(to right, rgb(62, 165, 91), rgb(120, 168, 82), rgb(176, 172, 74));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+      
+}
+.btn-submit{
+   background-color:  rgb(209, 81, 45);
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 24px;
+   
+}
+.btn-submit:hover{
+    background-color: #BB4120;
+}
+.bookmark-body {
+    border-top: 2px dotted black;
+border-bottom: 2px dotted black;
+
+}
