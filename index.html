@@ -18,7 +18,7 @@
     <div class="interface py-5 position-relative">
         <div class="container d-flex flex-column justify-content-center align-items-center">
             <h1 class="py-2 position-relative">Bookmarker</h1>
-            <div class="bookmark-body w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4 ">
+            <form class="bookmark-body w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4" id="bookmarkForm">
                 <h2 class="fav">
                     <i class="fa-solid fa-bookmark"></i>
                   Bookmark your favorite sites
@@ -32,23 +32,33 @@
                   <label for="bookmarkURL" class="pb-2 fw-semibold"><i class="fa-solid fa-link pe-2"></i>Site URL</label>
                   <input type="url" placeholder="Website URL" class="form-control" id="bookmarkURL">
                 </div>
-                <button onclick="add()" class ="btn btn-submit px-5 text-white" id="submitBtn">Submit</button>
+                <button type="submit" class="btn btn-submit px-5 text-white" id="submitBtn">Submit</button>
+              </form>
+              <div class="bookmarks-table-shell w-100">
+                <div class="table-toolbar">
+                    <div>
+                        <span class="table-eyebrow">Saved Links</span>
+                        <h3>Bookmark Library</h3>
+                    </div>
+                    <span class="table-badge"><i class="fa-solid fa-link"></i> Quick access</span>
+                </div>
+                <div class="table-responsive">
+                    <table class="table bookmarks-table text-center mb-0" id="tablle">
+                        <thead>
+                            <tr>
+                                <th>Index</th>
+                                <th>Website Name</th>
+                                <th>Visit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableContent"></tbody>
+                    </table>
+                </div>
               </div>
-              <table class="table mt-4 text-center bg-light" id="tablle">
-                <thead>
-                    <tr>
-                        <th>Index</th>
-                        <th>Website Name</th>
-                        <th>Visit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody id="tableContent">
-             </table>
         </div>
     </div>
     <script src="js/index.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-</body>
 </body>
 </html>

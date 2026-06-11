@@ -7,8 +7,9 @@ if (localStorage.getItem("websites") == null) {
     websites = [];
 } else {
     websites = JSON.parse(localStorage.getItem("websites"));
-    display();
 }
+
+display();
 
 // Handle form submission
 bookmarkForm.addEventListener("submit", function(e) {
@@ -77,17 +78,17 @@ function display() {
         for (var i = 0; i < websites.length; i++) {
             cartona += `
                 <tr class="table-row animate">
-                    <td>${i + 1}</td>
-                    <td>
+                    <td data-label="Index">${i + 1}</td>
+                    <td data-label="Website Name">
                         <i class="fa-solid fa-globe me-2 opacity-75"></i>
                         ${escapeHtml(websites[i].name)}
                     </td>
-                    <td>
+                    <td data-label="Visit">
                         <a href="${escapeHtml(websites[i].url)}" target="_blank" class="btn btn-visit">
                             <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>Visit
                         </a>
                     </td>
-                    <td>
+                    <td data-label="Delete">
                         <button onclick="deleteWebsite(${i})" class="btn btn-delete">
                             <i class="fa-solid fa-trash-can me-2"></i>Delete
                         </button>
